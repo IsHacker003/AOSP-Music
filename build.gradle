@@ -1,5 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    ext {
+        agp_version = '4.2.2'
+    }
     repositories {
         mavenCentral()
         maven {
@@ -8,7 +11,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath "com.android.tools.build:gradle:$agp_version"
     }
 }
 
