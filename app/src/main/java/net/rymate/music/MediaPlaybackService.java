@@ -350,7 +350,7 @@ public class MediaPlaybackService extends Service {
             mRemoteControlClient.setTransportControlFlags(flags);
         }
 
-        mPreferences = getSharedPreferences("Music", MODE_WORLD_READABLE | MODE_WORLD_WRITEABLE);
+        mPreferences = getSharedPreferences("Music", MODE_PRIVATE);
         mCardId = MusicUtils.getCardId(this);
 
         registerExternalStorageListener();
