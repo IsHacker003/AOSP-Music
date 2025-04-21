@@ -11,3 +11,9 @@ This project is based off the [AOSP stock music app](https://github.com/aosp-mir
  - Slightly refreshed now playing screen
  
 ~~This app is no longer maintained, however is uploaded here for backup~~
+# Some screenshots
+<img src="screenshots/Screenshot_20250421-225535.png" width=320 height=640><img src="screenshots/Screenshot_20250422-004944.png" width=320 height=640>
+<img src="screenshots/Screenshot_20250422-004939.png" width=320 height=640><img src="screenshots/Screenshot_20250422-004948.png" width=320 height=640>
+<img src="screenshots/Screenshot_20250422-004951.png" width=320 height=640><img src="screenshots/Screenshot_20250422-004953.png" width=320 height=640>
+<img src="screenshots/Screenshot_20250422-004958.png" width=320 height=640><img src="screenshots/Screenshot_20250422-005006.png" width=320 height=640>
+<img src="screenshots/Screenshot_20250422-005203.png" width=320 height=640><img src="screenshots/Screenshot_20250422-005311.png" width=320 height=640>
