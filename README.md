@@ -1,6 +1,5 @@
-(from original repo)
 # AOSP Music+
-
+(from upstream repo)
 Dump of the last version of the source code of AOSP Music+ 
 
 As I never used source control for this project, all we have is an initial commit.
