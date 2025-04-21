@@ -10,6 +10,4 @@ This project is based off the [AOSP stock music app](https://github.com/aosp-mir
  - Lockscreen / notification music controls
  - Slightly refreshed now playing screen
  
-This app is no longer maintained, however is uploaded here for backup
-
-Play Store Link: https://play.google.com/store/apps/details?id=net.rymate.music
+~~This app is no longer maintained, however is uploaded here for backup~~
