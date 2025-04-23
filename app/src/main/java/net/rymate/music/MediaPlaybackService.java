@@ -54,6 +54,7 @@ import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
@@ -70,8 +71,9 @@ import java.util.Vector;
 
 /**
  * Provides "background" audio playback capabilities, allowing the
- * user to switch between activities without stopping playback.
+ * user to s;witch between activities without stopping playback.
  */
+
 public class MediaPlaybackService extends Service {
     /**
      * used to specify whether enqueue() should start playing
@@ -119,6 +121,7 @@ public class MediaPlaybackService extends Service {
     private static final int TRACK_WENT_TO_NEXT = 7;
     private static final int NOTIFICATION_ID = 8;
     private static final int MAX_HISTORY_SIZE = 100;
+    private static final String CHANNEL_ID = "1";
 
     private MultiPlayer mPlayer;
     private String mFileToPlay;
@@ -1213,13 +1216,12 @@ public class MediaPlaybackService extends Service {
         }
     }
 
+
     private void updateNotification() {
         String track = null;
         String album = null;
         String artist = null;
-
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
         // Set the track name
         track = getTrackName();
 

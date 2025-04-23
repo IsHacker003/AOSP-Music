@@ -16,6 +16,7 @@
 
 package net.rymate.music.activities;
 
+import android.Manifest;
 import android.app.ExpandableListActivity;
 import android.app.SearchManager;
 import android.content.AsyncQueryHandler;
@@ -26,6 +27,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.CursorWrapper;
@@ -38,6 +40,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -63,8 +67,9 @@ import net.rymate.music.R;
 import net.rymate.music.utils.MusicUtils;
 
 
+
 public class ArtistAlbumBrowserActivity extends ExpandableListActivity
-        implements View.OnCreateContextMenuListener, MusicUtils.Defs, ServiceConnection {
+        implements View.OnCreateContextMenuListener, MusicUtils.Defs, ServiceConnection, ActivityCompat.OnRequestPermissionsResultCallback {
     private String mCurrentArtistId;
     private String mCurrentArtistName;
     private String mCurrentAlbumId;
@@ -82,12 +87,27 @@ public class ArtistAlbumBrowserActivity extends ExpandableListActivity
     /**
      * Called when the activity is first created.
      */
+
+    private void checkPermission() {
+        if (ContextCompat.checkSelfPermission(ArtistAlbumBrowserActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            // do this if permisisons have not yet been granted
+            Log.d("permission", "NOT granted");
+            ActivityCompat.requestPermissions(ArtistAlbumBrowserActivity.this,
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    0);
+        }else{
+            // if the permissions have already been granted do the following
+            Log.d("permission", "granted");
+        }
+    }
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        checkPermission();
         if (icicle != null) {
             mCurrentAlbumId = icicle.getString("selectedalbum");
             mCurrentAlbumName = icicle.getString("selectedalbumname");
