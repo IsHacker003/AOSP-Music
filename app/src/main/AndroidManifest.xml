@@ -14,8 +14,8 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="12"
-    android:versionName="1.3.4">
+    android:versionCode="13"
+    android:versionName="1.3.5">
 
     <original-package android:name="net.rymate.music" />
 
@@ -38,7 +38,7 @@
         <activity
             android:name=".activities.MusicBrowserActivity"
             android:exported="true"
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:theme="@android:style/Theme.Material.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.MUSIC_PLAYER" />
@@ -155,7 +155,7 @@
         </activity>
         <activity
             android:name=".activities.ArtistAlbumBrowserActivity"
-            android:exported="false">
+            android:exported="false" android:theme="@android:style/Theme.Material">
             <intent-filter>
                 <action android:name="android.intent.action.PICK" />
 
