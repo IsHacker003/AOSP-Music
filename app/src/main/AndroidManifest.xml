@@ -166,7 +166,7 @@
         </activity>
         <activity
             android:name=".activities.AlbumBrowserActivity"
-            android:exported="false">
+            android:exported="false" android:theme="@android:style/Theme.Material">
             <intent-filter>
                 <action android:name="android.intent.action.PICK" />
 
@@ -188,7 +188,7 @@
         </activity>
         <activity
             android:name=".activities.TrackBrowserActivity"
-            android:exported="false">
+            android:exported="false" android:theme="@android:style/Theme.Material">
             <intent-filter>
                 <action android:name="android.intent.action.EDIT" />
                 <action android:name="android.intent.action.PICK" />
@@ -216,7 +216,7 @@
         <activity
             android:name=".activities.PlaylistBrowserActivity"
             android:exported="true"
-            android:label="@string/musicbrowserlabel">
+            android:label="@string/musicbrowserlabel" android:theme="@android:style/Theme.Material">
             <intent-filter>
                 <action android:name="android.intent.action.PICK" />
 
