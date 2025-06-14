@@ -88,12 +88,12 @@ public class ArtistAlbumBrowserActivity extends ExpandableListActivity
      * Called when the activity is first created.
      */
 
-    private void checkPermission() {
+    public void checkPermission() {
         if (ContextCompat.checkSelfPermission(ArtistAlbumBrowserActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            // do this if permisisons have not yet been granted
+            // do this if permissions have not yet been granted
             Log.d("permission", "NOT granted");
             ActivityCompat.requestPermissions(ArtistAlbumBrowserActivity.this,
-                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
                     0);
         }else{
             // if the permissions have already been granted do the following

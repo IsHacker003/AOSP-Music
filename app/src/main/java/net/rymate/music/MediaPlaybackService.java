@@ -16,6 +16,7 @@
 
 package net.rymate.music;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -54,7 +55,6 @@ import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
@@ -179,6 +179,7 @@ public class MediaPlaybackService extends Service {
     private Handler mMediaplayerHandler = new Handler() {
         float mCurrentVolume = 1.0f;
 
+        @SuppressLint("HandlerLeak")
         @Override
         public void handleMessage(Message msg) {
             MusicUtils.debugLog("mMediaplayerHandler.handleMessage " + msg.what);
@@ -329,7 +330,6 @@ public class MediaPlaybackService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         ComponentName rec = new ComponentName(getPackageName(),
                 MediaButtonIntentReceiver.class.getName());
