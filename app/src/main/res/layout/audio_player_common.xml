@@ -51,11 +51,11 @@
             android:layout_marginBottom="2dip"
             android:gravity="center">
 
-            <net.rymate.music.RepeatingImageButton android:id="@+id/prev" style="@android:style/MediaButton.Previous" />
+            <com.ishacker.android.music.RepeatingImageButton android:id="@+id/prev" style="@android:style/MediaButton.Previous" />
 
             <ImageButton android:id="@+id/pause" style="@android:style/MediaButton.Play" />
 
-            <net.rymate.music.RepeatingImageButton android:id="@+id/next" style="@android:style/MediaButton.Next" />
+            <com.ishacker.android.music.RepeatingImageButton android:id="@+id/next" style="@android:style/MediaButton.Next" />
 
         </LinearLayout>
 

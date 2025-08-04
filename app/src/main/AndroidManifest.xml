@@ -17,7 +17,7 @@
     android:versionCode="14"
     android:versionName="1.3.6">
 
-    <original-package android:name="net.rymate.music" />
+    <original-package android:name="com.ishacker.android.music" />
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -34,7 +34,7 @@
         android:taskAffinity="android.task.music">
         <meta-data
             android:name="android.app.default_searchable"
-            android:value="net.rymate.music.QueryBrowserActivity" />
+            android:value="com.ishacker.android.music.QueryBrowserActivity" />
 
         <activity
             android:name=".activities.MusicBrowserActivity"
@@ -92,7 +92,7 @@
                 <data android:mimeType="application/itunes" />
             </intent-filter>
             <intent-filter>
-                <action android:name="net.rymate.music.PLAYBACK_VIEWER" />
+                <action android:name="com.ishacker.android.music.PLAYBACK_VIEWER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
