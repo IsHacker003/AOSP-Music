@@ -15,7 +15,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'net.rymate.music'
+    namespace 'com.ishacker.android.music'
     lint {
         abortOnError false
     }
